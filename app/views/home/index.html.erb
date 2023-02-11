@@ -1,0 +1,21 @@
+<h1>Posts</h1>
+
+<%= link_to 'Create new post', new_post_path %>
+
+<% if @posts.empty?%>
+  <p>No Post Available</p>
+<% else %>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <h3> <%= post.title %> </h3>
+        <p> <%= post.body %> </p>
+        <% if user_signed_in? %>
+          <p> Created by: <%= post.user.email %> </p>
+        <% else %>
+          <p> Created by: Anonymous </p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
