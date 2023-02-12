@@ -2,28 +2,21 @@
   <h1 class="page-title">New Post</h1>
   
   <%= form_with model: @post do |form| %>
-    <% if @post.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved </h2>
-  
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li>
-              <%= msg %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
   
     <div class="field title">
-      <%= form.label :title %><br>
+      <%= form.label :title %>
       <%= form.text_field :title, class: "form-field" %>
+      <% @post.errors.full_messages_for(:title).each do |msg| %>
+        <div id="error-explanation"> <%= msg %> </div>
+      <% end %>
     </div>
   
     <div class="field body">
-      <%= form.label :body %><br>
+      <%= form.label :body %>
       <%= form.text_area :body, class: "form-field" %>
+      <% @post.errors.full_messages_for(:body).each do |msg| %>
+        <div id="error-explanation"> <%= msg %> </div>
+      <% end %>
     </div>
   
     <div>

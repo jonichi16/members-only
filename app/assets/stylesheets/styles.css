@@ -157,3 +157,8 @@ li {
   color: var(--color-alert-text);
   border: 1px solid var(--color-alert-text);
 }
+
+#error-explanation {
+  font-weight: 700;
+  color: var(--color-error-text);
+}
