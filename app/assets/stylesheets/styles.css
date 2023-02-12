@@ -116,6 +116,16 @@ li {
   display: block;
 }
 
+.btn-post {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.btn-post .btn-link {
+  width: 25%;
+}
+
 .body .form-field {
   height: 200px;
 }

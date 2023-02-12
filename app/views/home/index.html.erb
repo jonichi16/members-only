@@ -1,9 +1,12 @@
 <div class="container posts">
   <h1 class="page-title">Posts</h1>
   
-  <% if user_signed_in? %>
-    <%= link_to "Create new post", new_post_path %>
-  <% end %>
+  
+    <% if user_signed_in? %>
+      <div class="btn-post">
+        <%= link_to "Create new post", new_post_path, class: "btn btn-link" %>
+      </div>
+    <% end %>
   
   <% if @posts.empty?%>
     <p>No Post Available</p>
