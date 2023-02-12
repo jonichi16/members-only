@@ -1,5 +1,11 @@
 :root {
   --font-primary: 'Roboto', sans-serif;
+
+  --color-primary-700: #0f766e;
+  --color-primary-600: #059669;
+
+  --color-light-100: #f1f5f9;
+  --color-dark-900: #111827;
 }
 
 /* Box sizing rules */
@@ -72,4 +78,6 @@ select {
 
 body {
   font-family: var(--font-primary);
+  color: var(--color-dark-900);
+  background-color: var(--color-light-100);
 }
