@@ -1,31 +1,35 @@
-<h1>New Post</h1>
-
-<%= form_with model: @post do |form| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved </h2>
-
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li>
-            <%= msg %>
-          </li>
-        <% end %>
-      </ul>
+<div class="container form">
+  <h1 class="page-title">New Post</h1>
+  
+  <%= form_with model: @post do |form| %>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved </h2>
+  
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field title">
+      <%= form.label :title %><br>
+      <%= form.text_field :title, class: "form-field" %>
     </div>
+  
+    <div class="field body">
+      <%= form.label :body %><br>
+      <%= form.text_area :body, class: "form-field" %>
+    </div>
+  
+    <div>
+      <%= form.submit "Create Post", class: "btn" %>
+    </div><br>
+  
+    <%= link_to 'Cancel', root_path, class: "btn btn-link" %>
   <% end %>
-
-  <div class="title">
-    <%= form.label :title %><br>
-    <%= form.text_field :title %><br>
-  </div>
-
-  <div class="body">
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
-  </div><br>
-
-  <%= form.submit %>
-
-  <%= link_to 'Cancel', root_path %>
-<% end %>
+</div>
