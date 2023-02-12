@@ -15,10 +15,11 @@
   padding: 0.5em;
 }
 
-.logo {
+.logo a {
   font-weight: 900;
   font-size: 1.75rem;
   color: var(--color-light-100);
+  text-decoration: none;
 }
 
 .nav-link {

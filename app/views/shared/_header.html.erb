@@ -1,6 +1,6 @@
 <div class="container flex">
   <div class="logo">
-    <p>Members Only</p>
+    <%= link_to 'Members Only', root_path %>
   </div>
   <div class="nav-list">
     <% if user_signed_in? %>
