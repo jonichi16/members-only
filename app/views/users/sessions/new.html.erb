@@ -1,9 +1,10 @@
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :login %><br />
+    <%= f.label :login, 'Username or Email' %><br />
     <%= f.text_field :login, autofocus: true, autocomplete: "email" %>
   </div>
 
