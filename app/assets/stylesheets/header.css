@@ -1,0 +1,33 @@
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  background-color: var(--color-primary-700);
+  padding: 0.5em;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.75rem;
+  color: var(--color-light-100);
+}
+
+.nav-link {
+  color: var(--color-light-100);
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.5em;
+}
