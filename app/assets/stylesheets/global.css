@@ -7,6 +7,11 @@
   --color-light-100: #f1f5f9;
   --color-light-200: #e5e7eb;
   --color-dark-900: #111827;
+
+  --color-success-bg: #def0d8;
+  --color-success-text: #587f3d;
+  --color-alert-bg: #fdf8e3;
+  --color-alert-text: #8d774f;
 }
 
 /* Box sizing rules */
