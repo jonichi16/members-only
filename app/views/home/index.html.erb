@@ -1,22 +1,28 @@
-<div class="container">
-  <h1>Posts</h1>
+<div class="container posts">
+  <h1 class="page-title">Posts</h1>
   
-  <%= link_to 'Create new post', new_post_path %>
+  <% if user_signed_in? %>
+    <%= link_to "Create new post", new_post_path %>
+  <% end %>
   
   <% if @posts.empty?%>
     <p>No Post Available</p>
   <% else %>
     <ul>
       <% @posts.each do |post| %>
-        <li>
-          <h3> <%= post.title %> </h3>
-          <p> <%= post.body %> </p>
-          <% if user_signed_in? %>
-            <p> Created by: <%= post.user.username %> </p>
-          <% else %>
-            <p> Created by: Anonymous </p>
-          <% end %>
-        </li>
+        <div class="card">
+          <li>
+            <div class="post-content">
+              <h3 class="card-title" > <%= post.title %> </h3>
+              <p class="card-body"> <%= post.body %> </p>
+            </div>
+            <% if user_signed_in? %>
+              <p class="card-author"> Created by: <%= post.user.username %> </p>
+            <% else %>
+              <p class="card-author"> Created by: Anonymous </p>
+            <% end %>
+          </li>
+        </div>
       <% end %>
     </ul>
   <% end %>
