@@ -162,3 +162,8 @@ li {
   font-weight: 700;
   color: var(--color-error-text);
 }
+
+.no-post {
+  text-align: center;
+  padding-top: 5em;
+}
